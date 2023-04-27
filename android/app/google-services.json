@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "498947087321",
+    "project_id": "dailytasks1611",
+    "storage_bucket": "dailytasks1611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498947087321:android:14bda7379f8e43aa4397c8",
+        "android_client_info": {
+          "package_name": "com.ninagebalska.daily_tasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498947087321-jnkh5n7vjurr33vtp267qqk7hehfq2i5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR_D6qlbEy0R8S0mlrNJDWVqC9HMymc88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498947087321-jnkh5n7vjurr33vtp267qqk7hehfq2i5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498947087321-g5j0h7cig424t9h7tvp3bktcvitve73f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ninagebalska.dailyTasks"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498947087321:android:9220713430c3146d4397c8",
+        "android_client_info": {
+          "package_name": "com.ninagebalska.what_to_do_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498947087321-jnkh5n7vjurr33vtp267qqk7hehfq2i5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR_D6qlbEy0R8S0mlrNJDWVqC9HMymc88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498947087321-jnkh5n7vjurr33vtp267qqk7hehfq2i5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498947087321-g5j0h7cig424t9h7tvp3bktcvitve73f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ninagebalska.dailyTasks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
