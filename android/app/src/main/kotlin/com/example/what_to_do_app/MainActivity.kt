@@ -1,4 +1,4 @@
-package com.example.what_to_do_app
+package com.ninagebalska.what_to_do_app
 
 import io.flutter.embedding.android.FlutterActivity
 
