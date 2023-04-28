@@ -43,6 +43,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   meta: ^1.8.0
   intl: ^0.17.0
+  google_fonts: ^4.0.4
 
 dev_dependencies:
   flutter_test:
