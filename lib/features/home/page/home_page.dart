@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: ListView(children: [
+      body: ListView(children: const [
         _EventTile('zadanie 1'),
         _EventTile('zadanie 2'),
         _EventTile('zadanie 3'),
@@ -42,7 +42,7 @@ class _EventTile extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
