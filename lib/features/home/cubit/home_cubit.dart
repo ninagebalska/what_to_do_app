@@ -30,4 +30,10 @@ class HomeCubit extends Cubit<HomeState> {
     _streamSubscription?.cancel();
     return super.close();
   }
+
+
+
+
+
+
 }

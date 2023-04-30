@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:what_to_do_app/features/add_event/add_event.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,7 +27,12 @@ class HomePage extends StatelessWidget {
       ]),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFFFDA769),
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) => const AddTaskDialog(),
+          );
+        },
         child: const Icon(
           Icons.add,
           color: Color(0xFFF6FFF8),
@@ -37,8 +43,9 @@ class HomePage extends StatelessWidget {
 }
 
 class _EventTile extends StatelessWidget {
-  const _EventTile(this.title,{
-    Key? key, 
+  const _EventTile(
+    this.title, {
+    Key? key,
   }) : super(key: key);
 
   final String title;
