@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class AddTaskDialog extends StatelessWidget {
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+
+class AddTaskDialog extends StatefulWidget {
   const AddTaskDialog({super.key});
+
+  @override
+  State<AddTaskDialog> createState() => _AddTaskDialogState();
+}
+
+class _AddTaskDialogState extends State<AddTaskDialog> {
+  String? title;
+  DateTime? eventDate;
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +50,29 @@ class AddTaskDialog extends StatelessWidget {
                 filled: true,
                 fillColor: const Color(0xFFFBFBFB),
               ),
+              onChanged: (newValue) {
+                setState(() {
+                  title = newValue;
+                });
+              },
             ),
             const SizedBox(height: 15),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () async {
+                final selectedDate = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime.now(),
+                  lastDate: DateTime.now().add(
+                    const Duration(days: 365 * 10),
+                  ),
+                );
+                if (selectedDate != null) {
+                  setState(() {
+                    eventDate = selectedDate;
+                  });
+                }
+              },
               icon: const Icon(Icons.calendar_month_rounded),
               style: OutlinedButton.styleFrom(
                 minimumSize: const Size.fromHeight(55),
@@ -51,7 +80,9 @@ class AddTaskDialog extends StatelessWidget {
                   borderRadius: BorderRadius.circular(32.0),
                 ),
               ),
-              label: const Text('Choose date'),
+              label: Text(eventDate == null
+                  ? 'Choose date'
+                  : DateFormat.yMMMd().format(eventDate!)),
             ),
             const SizedBox(height: 15),
             ElevatedButton(
