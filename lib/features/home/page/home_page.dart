@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:what_to_do_app/data/event_db.dart';
+import 'package:what_to_do_app/domain/model/event_model.dart';
+
 import 'package:what_to_do_app/features/add/add_task.dart';
+import 'package:what_to_do_app/features/home/cubit/home_cubit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,11 +25,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: ListView(children: const [
-        _EventTile('zadanie 1'),
-        _EventTile('zadanie 2'),
-        _EventTile('zadanie 3'),
-      ]),
+      body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFFFDA769),
         onPressed: () {
@@ -42,18 +43,41 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class _EventTile extends StatelessWidget {
-  const _EventTile(
-    this.title, {
+class _HomePageBody extends StatelessWidget {
+  const _HomePageBody({
     Key? key,
   }) : super(key: key);
 
-  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => HomeCubit(EventDataBase())..start(),
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          final events = state.events;
+          return ListView(children: [
+            for (final event in events)
+              _EventTile(
+                event: event,
+              ),
+          ]);
+        },
+      ),
+    );
+  }
+}
+
+class _EventTile extends StatelessWidget {
+  const _EventTile({
+    Key? key,
+    required this.event,
+  }) : super(key: key);
+
+  final Event event;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -68,12 +92,23 @@ class _EventTile extends StatelessWidget {
           ),
         ],
       ),
-      child: Text(
-        title,
-        style: GoogleFonts.poppins(
-            color: const Color(0xFFFBFBFB),
-            fontWeight: FontWeight.bold,
-            fontSize: 16),
+      child: Column(
+        children: [
+          Text(
+            event.title,
+            style: GoogleFonts.poppins(
+                color: const Color(0xFFFBFBFB),
+                fontWeight: FontWeight.bold,
+                fontSize: 16),
+          ),
+          Text(
+            event.eventDateFormatted(),
+            style: GoogleFonts.poppins(
+                color: const Color(0xFFFBFBFB),
+                fontWeight: FontWeight.bold,
+                fontSize: 8),
+          ),
+        ],
       ),
     );
   }

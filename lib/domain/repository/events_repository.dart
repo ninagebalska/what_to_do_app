@@ -36,7 +36,7 @@ class EventsRepository {
         .add(
       {
         'title': title,
-        'release_date': eventDate,
+        'eventDate': eventDate,
       },
     );
   }
