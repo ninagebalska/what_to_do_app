@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:what_to_do_app/features/add_event/add_event.dart';
+import 'package:what_to_do_app/features/add/add_task.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

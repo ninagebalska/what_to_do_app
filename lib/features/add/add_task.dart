@@ -11,7 +11,7 @@ class AddTaskDialog extends StatefulWidget {
 }
 
 class _AddTaskDialogState extends State<AddTaskDialog> {
-  String? title;
+  var title = '';
   DateTime? eventDate;
 
   @override
