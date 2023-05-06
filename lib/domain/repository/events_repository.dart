@@ -41,16 +41,5 @@ class EventsRepository {
     );
   }
 
-  Future<void> delete({required String id}) {
-    final userID = FirebaseAuth.instance.currentUser?.uid;
-    if (userID == null) {
-      throw Exception('User is not logged in');
-    }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('events')
-        .doc(id)
-        .delete();
-  }
+  
 }

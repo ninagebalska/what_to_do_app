@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:what_to_do_app/data/event_db.dart';
 import 'package:what_to_do_app/domain/model/event_model.dart';
 
-import 'package:what_to_do_app/features/add/add_task.dart';
+import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
 import 'package:what_to_do_app/features/home/cubit/home_cubit.dart';
 
 class HomePage extends StatelessWidget {
@@ -57,8 +57,32 @@ class _HomePageBody extends StatelessWidget {
           final events = state.events;
           return ListView(children: [
             for (final event in events)
-              _EventTile(
-                event: event,
+              Dismissible(
+                background: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                  ),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 32.0),
+                      child: Icon(
+                        Icons.delete,
+                      ),
+                    ),
+                  ),
+                ),
+                confirmDismiss: (direction) async {
+                  // only from right to left
+                  return direction == DismissDirection.endToStart;
+                },
+                key: ValueKey(event.id),
+                onDismissed: (direction) {
+                  context.read<HomeCubit>().delete(id: event.id);
+                },
+                child: _EventTile(
+                  event: event,
+                ),
               ),
           ]);
         },
@@ -82,7 +106,7 @@ class _EventTile extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: const Color(0xFF52796F),
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(17),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -93,20 +117,27 @@ class _EventTile extends StatelessWidget {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             event.title,
             style: GoogleFonts.poppins(
                 color: const Color(0xFFFBFBFB),
                 fontWeight: FontWeight.bold,
-                fontSize: 16),
+                fontSize: 18),
+          ),
+          const Divider(
+            height: 10,
+            thickness: 1,
+            color: Color(0xFFFBFBFB),
           ),
           Text(
+            textAlign: TextAlign.right,
             event.eventDateFormatted(),
             style: GoogleFonts.poppins(
                 color: const Color(0xFFFBFBFB),
                 fontWeight: FontWeight.bold,
-                fontSize: 8),
+                fontSize: 12),
           ),
         ],
       ),

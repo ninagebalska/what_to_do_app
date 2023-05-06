@@ -13,7 +13,7 @@ class AddTaskDialog extends StatefulWidget {
 }
 
 class _AddTaskDialogState extends State<AddTaskDialog> {
-  var title = '';
+  String? title;
   DateTime? eventDate;
 
   @override
@@ -106,11 +106,11 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
-                      onPressed: eventDate == null
+                      onPressed: eventDate == null || title == null
                           ? null
                           : () {
                               context.read<AddCubit>().add(
-                                    title,
+                                    title!,
                                     eventDate!,
                                   );
                             },
