@@ -58,17 +58,23 @@ class _HomePageBody extends StatelessWidget {
           return ListView(children: [
             for (final event in events)
               Dismissible(
-                background: const DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.red,
+                background: DecoratedBox(
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
                   ),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 32.0),
-                      child: Icon(
-                        Icons.delete,
-                      ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 32.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'DONE',
+                          style: GoogleFonts.poppins(fontSize: 20),
+                        ),
+                        const Icon(
+                          Icons.done_rounded,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -132,8 +138,8 @@ class _EventTile extends StatelessWidget {
             color: Color(0xFFFBFBFB),
           ),
           Text(
-            textAlign: TextAlign.right,
             event.eventDateFormatted(),
+            textAlign: TextAlign.right,
             style: GoogleFonts.poppins(
                 color: const Color(0xFFFBFBFB),
                 fontWeight: FontWeight.bold,
