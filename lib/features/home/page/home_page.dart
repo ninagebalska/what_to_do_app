@@ -5,6 +5,7 @@ import 'package:what_to_do_app/data/event_db.dart';
 import 'package:what_to_do_app/domain/model/event_model.dart';
 
 import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
+import 'package:what_to_do_app/features/drawer/drawer.dart';
 import 'package:what_to_do_app/features/home/cubit/home_cubit.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,6 +26,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
+      drawer: const NavigationDrawer(),
       body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFFFDA769),
