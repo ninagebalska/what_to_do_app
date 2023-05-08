@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:what_to_do_app/auth/user_profile.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({super.key});
@@ -12,15 +13,9 @@ class NavigationDrawer extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [
-              0.2,
-              0.6,
-              0.8,
-            ],
             colors: [
-              Color(0xffCAD2C5),
-              Color(0xff52796F),
-              Color(0xFF2F3E46),
+              Color(0xFF3700B3),
+              Color(0xFF5B1D82),
             ],
           ),
         ),
@@ -66,7 +61,13 @@ class NavigationDrawer extends StatelessWidget {
                     color: const Color(0xFFfbfbfb),
                   ),
                 ),
-                onTap: () => UserProfile(),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const UserProfile(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
         title: Text(
           'Your Daily Tasks',
           style: GoogleFonts.poppins(
-            color: const Color(0xFF354F52),
+            color: const Color(0xFF390C65),
+            fontWeight: FontWeight.w500,
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
       drawer: const NavigationDrawer(),
       body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFFFDA769),
+        backgroundColor: const Color(0xFFBB86FC),
         onPressed: () {
           showDialog(
             context: context,
@@ -113,7 +114,7 @@ class _EventTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFF52796F),
+        color: const Color(0xFF6200EE),
         borderRadius: BorderRadius.circular(17),
         boxShadow: [
           BoxShadow(
