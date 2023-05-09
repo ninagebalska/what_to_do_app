@@ -14,8 +14,9 @@ class NavigationDrawer extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF3700B3),
-              Color(0xFF5B1D82),
+              Color(0xFF4158D0),
+              Color(0xFFC850C0),
+              Color(0xFFFFCC70),
             ],
           ),
         ),
@@ -23,9 +24,21 @@ class NavigationDrawer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 72.0),
           child: Column(
             children: [
-              const CircleAvatar(
-                radius: 80,
-                backgroundColor: Colors.white,
+              Container(
+                width: 150,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: const Color(0xFFFFCC70),
+                    width: 5.0,
+                  ),
+                ),
+                child: const CircleAvatar(
+                  radius: 80,
+                  backgroundImage: NetworkImage(
+                      'https://thumbs.dreamstime.com/b/purple-user-icon-circle-shadow-solid-gradient-thin-linear-sign-136856587.jpg'),
+                  backgroundColor: Colors.white,
+                ),
               ),
               const SizedBox(height: 20),
               Text(
@@ -36,19 +49,19 @@ class NavigationDrawer extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 100),
-              // ListTile(
-              //   leading: const Icon(
-              //     Icons.calendar_month_rounded,
-              //     color: Color(0xFFfbfbfb),
-              //   ),
-              //   title: Text(
-              //     'Calendar',
-              //     style: GoogleFonts.poppins(
-              //       fontSize: 18,
-              //       color: const Color(0xFFfbfbfb),
-              //     ),
-              //   ),
-              // ),
+              ListTile(
+                leading: const Icon(
+                  Icons.calendar_month_rounded,
+                  color: Color(0xFFfbfbfb),
+                ),
+                title: Text(
+                  'Calendar',
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    color: const Color(0xFFfbfbfb),
+                  ),
+                ),
+              ),
               ListTile(
                 leading: const Icon(
                   Icons.manage_accounts_rounded,

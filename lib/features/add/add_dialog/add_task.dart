@@ -52,23 +52,30 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                     Text(
                       'NEW TASK',
                       style: GoogleFonts.poppins(
-                          color: const Color(0xFF52796F),
-                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF4158D0),
+                          fontWeight: FontWeight.w500,
                           fontSize: 20),
                     ),
                     const SizedBox(height: 18),
                     TextField(
                       decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            width: 2,
+                            color: Colors.orange,
+                          ),
+                          borderRadius: BorderRadius.circular(32.0),
+                        ),
                         border: OutlineInputBorder(
                           borderSide: const BorderSide(
-                            width: 3,
-                            color: Color.fromARGB(255, 194, 194, 194),
+                            width: 2,
+                            color: Colors.orange,
                           ),
                           borderRadius: BorderRadius.circular(32.0),
                         ),
                         hintText: 'What to do...',
-                        filled: true,
-                        fillColor: const Color(0xFFFBFBFB),
+                        // filled: true,
+                        // fillColor: const Color(0xFFFBFBFB),
                       ),
                       onChanged: (newValue) {
                         setState(() {

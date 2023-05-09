@@ -25,12 +25,12 @@ class HomePage extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xFFF6FFF8),
       ),
       drawer: const NavigationDrawer(),
       body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFFBB86FC),
+        backgroundColor: const Color(0xFFFFCC70),
         onPressed: () {
           showDialog(
             context: context,
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
         },
         child: const Icon(
           Icons.add,
-          color: Color(0xFFF6FFF8),
+          color: Colors.white,
         ),
       ),
     );
@@ -72,10 +72,15 @@ class _HomePageBody extends StatelessWidget {
                       children: [
                         Text(
                           'DONE',
-                          style: GoogleFonts.poppins(fontSize: 20),
+                          style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            color: Colors.orange,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                         const Icon(
                           Icons.done_rounded,
+                          color: Colors.orange,
                         ),
                       ],
                     ),
@@ -116,12 +121,12 @@ class _EventTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF6200EE),
         borderRadius: BorderRadius.circular(17),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 6,
-            blurRadius: 7,
-            offset: const Offset(0, 3),
+            color: Color.fromARGB(255, 219, 198, 248),
+            spreadRadius: 5,
+            blurRadius: 8,
+            offset: Offset(5, 7),
           ),
         ],
       ),
