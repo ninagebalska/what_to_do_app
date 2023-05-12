@@ -2,19 +2,20 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:what_to_do_app/data/event_db.dart';
+
 import 'package:what_to_do_app/domain/model/event_model.dart';
+import 'package:what_to_do_app/domain/repository/events_repository.dart';
 
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._eventDataBase) : super(const HomeState());
+  HomeCubit(this._eventsRepository) : super(const HomeState());
 
-  final EventDataBase _eventDataBase;
+  final EventsRepository _eventsRepository;
   StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
-    _streamSubscription = _eventDataBase.getEventsStream().listen(
+    _streamSubscription = _eventsRepository.getEventsStream().listen(
       (events) {
         emit(HomeState(events: events));
       },

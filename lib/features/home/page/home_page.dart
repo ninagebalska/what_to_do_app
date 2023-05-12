@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:what_to_do_app/data/event_db.dart';
 import 'package:what_to_do_app/domain/model/event_model.dart';
+import 'package:what_to_do_app/domain/repository/events_repository.dart';
 
 import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
 import 'package:what_to_do_app/features/drawer/drawer.dart';
@@ -55,7 +55,7 @@ class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(EventDataBase())..start(),
+      create: (context) => HomeCubit(EventsRepository())..start(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           if (state.events.isEmpty) {
