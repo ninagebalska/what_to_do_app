@@ -45,6 +45,7 @@ dependencies:
   intl: ^0.17.0
   google_fonts: ^4.0.4
   firebase_ui_auth: ^1.2.4
+  lottie: ^2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -84,10 +85,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: SocialIcons
+      fonts:
+        - asset: packages/firebase_ui_auth/fonts/SocialIcons.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

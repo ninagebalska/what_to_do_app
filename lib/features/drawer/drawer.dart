@@ -25,16 +25,16 @@ class NavigationDrawer extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                width: 150,
+                width: 180,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: const Color(0xFFFFCC70),
+                    color: const Color(0xFF6200EE),
                     width: 5.0,
                   ),
                 ),
                 child: const CircleAvatar(
-                  radius: 80,
+                  radius: 100,
                   backgroundImage: NetworkImage(
                       'https://thumbs.dreamstime.com/b/purple-user-icon-circle-shadow-solid-gradient-thin-linear-sign-136856587.jpg'),
                   backgroundColor: Colors.white,

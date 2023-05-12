@@ -7,6 +7,7 @@ import 'package:what_to_do_app/domain/model/event_model.dart';
 import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
 import 'package:what_to_do_app/features/drawer/drawer.dart';
 import 'package:what_to_do_app/features/home/cubit/home_cubit.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -57,7 +58,31 @@ class _HomePageBody extends StatelessWidget {
       create: (context) => HomeCubit(EventDataBase())..start(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
+          if (state.events.isEmpty) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Lottie.network(
+                    'https://assets7.lottiefiles.com/packages/lf20_mf5j5kua.json',
+                    width: 300,
+                    height: 300,
+                  ),
+                  Text(
+                    'You have done all tasks!',
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      color: Colors.deepOrange,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  )
+                ],
+              ),
+            );
+          }
+
           final events = state.events;
+
           return ListView(children: [
             for (final event in events)
               Dismissible(
