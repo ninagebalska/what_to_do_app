@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          'Your Daily Tasks',
+          'My Daily Tasks',
           style: GoogleFonts.poppins(
             color: const Color(0xFF390C65),
             fontWeight: FontWeight.w500,
@@ -104,7 +104,7 @@ class _HomePageBody extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.done_rounded,
+                          Icons.delete_rounded,
                           color: Colors.orange,
                         ),
                       ],

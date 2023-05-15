@@ -62,6 +62,9 @@ class NavigationDrawer extends StatelessWidget {
                       color: const Color(0xFFfbfbfb),
                     ),
                   ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 ListTile(
                   leading: const Icon(
