@@ -130,7 +130,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                       child: Text(
                         'Add task',
                         style: GoogleFonts.poppins(
-                          color: const Color(0xfffbfbfb),
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
