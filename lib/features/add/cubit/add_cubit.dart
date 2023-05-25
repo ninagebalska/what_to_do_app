@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:what_to_do_app/domain/repository/events_repository.dart';
+import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 
 part 'add_state.dart';
 

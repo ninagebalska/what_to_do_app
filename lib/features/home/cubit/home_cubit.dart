@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:what_to_do_app/domain/model/event_model.dart';
-import 'package:what_to_do_app/domain/repository/events_repository.dart';
+import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 
 part 'home_state.dart';
 

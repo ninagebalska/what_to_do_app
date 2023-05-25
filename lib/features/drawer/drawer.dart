@@ -49,14 +49,14 @@ class NavigationDrawer extends StatelessWidget {
                     color: const Color(0xFFfbfbfb),
                   ),
                 ),
-                const SizedBox(height: 100),
+                const SizedBox(height: 60),
                 ListTile(
                   leading: const Icon(
-                    Icons.calendar_month_rounded,
+                    Icons.home_rounded,
                     color: Color(0xFFfbfbfb),
                   ),
                   title: Text(
-                    'Calendar',
+                    'HOME',
                     style: GoogleFonts.poppins(
                       fontSize: 18,
                       color: const Color(0xFFfbfbfb),
@@ -68,11 +68,11 @@ class NavigationDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const Icon(
-                    Icons.manage_accounts_rounded,
+                    Icons.person_rounded,
                     color: Color(0xFFfbfbfb),
                   ),
                   title: Text(
-                    'Profile settings',
+                    'PROFILE',
                     style: GoogleFonts.poppins(
                       fontSize: 18,
                       color: const Color(0xFFfbfbfb),
@@ -85,6 +85,20 @@ class NavigationDrawer extends StatelessWidget {
                       ),
                     );
                   },
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.logout_rounded,
+                    color: Color(0xFFfbfbfb),
+                  ),
+                  title: Text(
+                    'LOG OUT',
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      color: const Color(0xFFfbfbfb),
+                    ),
+                  ),
+                  onTap: () {},
                 ),
               ],
             ),

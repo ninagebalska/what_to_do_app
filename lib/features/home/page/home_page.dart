@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:what_to_do_app/domain/model/event_model.dart';
-import 'package:what_to_do_app/domain/repository/events_repository.dart';
+import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 
 import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
 import 'package:what_to_do_app/features/drawer/drawer.dart';
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF6FFF8),
+      backgroundColor: const Color(0xFFFBFBFB),
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        backgroundColor: const Color(0xFFF6FFF8),
+        backgroundColor: const Color(0xFFFBFBFB),
       ),
       drawer: const NavigationDrawer(),
       body: const _HomePageBody(),

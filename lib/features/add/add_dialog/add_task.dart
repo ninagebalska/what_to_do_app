@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:what_to_do_app/domain/repository/events_repository.dart';
+import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 import 'package:what_to_do_app/features/add/cubit/add_cubit.dart';
 
 class AddTaskDialog extends StatefulWidget {
