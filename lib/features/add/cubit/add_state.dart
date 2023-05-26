@@ -1,7 +1,7 @@
 part of 'add_cubit.dart';
 
 class AddState {
-    AddState({
+  AddState({
     this.saved = false,
     this.errorMessage = '',
   });
