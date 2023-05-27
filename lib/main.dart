@@ -1,6 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:what_to_do_app/auth/auth_gate.dart';
-import 'package:what_to_do_app/auth/login_page.dart';
 import 'package:what_to_do_app/welcome_page.dart';
 
 import 'firebase_options.dart';
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: LoginPage(),
+      home: const WelcomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

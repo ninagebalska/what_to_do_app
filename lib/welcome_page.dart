@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:what_to_do_app/auth/auth_gate.dart';
+import 'package:what_to_do_app/auth/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -37,7 +37,7 @@ class WelcomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => const AuthGate(),
+                      builder: (_) => LoginPage(),
                     ),
                   );
                 },
