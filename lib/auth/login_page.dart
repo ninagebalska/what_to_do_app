@@ -133,7 +133,14 @@ class LoginPage extends StatelessWidget {
                           style: GoogleFonts.poppins(color: Colors.black54),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (state.isCreatingAccount == false) {
+                              context.read<AuthCubit>().createAccount();
+                            }
+                            if (state.isCreatingAccount) {
+                              context.read<AuthCubit>().notCreateAccount();
+                            }
+                          },
                           style: TextButton.styleFrom(
                               foregroundColor: const Color(0xFF4158D0)),
                           child: Text(
