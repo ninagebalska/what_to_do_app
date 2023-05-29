@@ -9,6 +9,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: const Color(0xFFFBFBFB),
       appBar: AppBar(
         backgroundColor: const Color(0xFF4158D0),
         elevation: 0,
