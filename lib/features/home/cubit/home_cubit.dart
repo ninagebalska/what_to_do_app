@@ -1,8 +1,5 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:what_to_do_app/domain/model/event_model.dart';
 import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 
@@ -26,18 +23,9 @@ class HomeCubit extends Cubit<HomeState> {
       );
   }
 
-  Future<void> delete({required String id}) async {
-    final userID = FirebaseAuth.instance.currentUser?.uid;
-    if (userID == null) {
-      throw Exception('User is not logged in');
-    }
+  Future<void> remove({required String id}) async {
     try {
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(userID)
-          .collection('events')
-          .doc(id)
-          .delete();
+      _eventsRepository.delete(id: id);
     } catch (error) {
       emit(
         const HomeState(removingErrorOccured: true),

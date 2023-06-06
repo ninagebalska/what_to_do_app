@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 import 'package:what_to_do_app/features/add/cubit/add_cubit.dart';
+import 'package:what_to_do_app/injection_container.dart';
 
 class AddTaskDialog extends StatefulWidget {
   const AddTaskDialog({super.key});
@@ -19,7 +19,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AddCubit(EventsRepository()),
+      create: (context) => getIt<AddCubit>(),
       child: BlocListener<AddCubit, AddState>(
         listener: (context, state) {
           if (state.saved) {
@@ -74,8 +74,6 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                           borderRadius: BorderRadius.circular(32.0),
                         ),
                         hintText: 'What to do...',
-                        // filled: true,
-                        // fillColor: const Color(0xFFFBFBFB),
                       ),
                       onChanged: (newValue) {
                         setState(() {

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:what_to_do_app/domain/model/event_model.dart';
-import 'package:what_to_do_app/domain/repositories/events_repository.dart';
-
 import 'package:what_to_do_app/features/add/add_dialog/add_task.dart';
 import 'package:what_to_do_app/features/drawer/drawer.dart';
 import 'package:what_to_do_app/features/home/cubit/home_cubit.dart';
 import 'package:lottie/lottie.dart';
+import 'package:what_to_do_app/injection_container.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -55,7 +54,7 @@ class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(EventsRepository())..start(),
+      create: (context) => getIt<HomeCubit>()..start(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           if (state.events.isEmpty) {
@@ -117,7 +116,7 @@ class _HomePageBody extends StatelessWidget {
                 },
                 key: ValueKey(event.id),
                 onDismissed: (direction) {
-                  context.read<HomeCubit>().delete(id: event.id);
+                  context.read<HomeCubit>().remove(id: event.id);
                 },
                 child: _EventTile(
                   event: event,

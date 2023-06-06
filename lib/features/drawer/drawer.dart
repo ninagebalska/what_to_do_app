@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:what_to_do_app/auth/cubit/auth_cubit.dart';
 import 'package:what_to_do_app/auth/login_page.dart';
 import 'package:what_to_do_app/auth/user_profile.dart';
-import 'package:what_to_do_app/domain/repositories/auth_repository.dart';
 import 'package:what_to_do_app/enums.dart';
+import 'package:what_to_do_app/injection_container.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({super.key});
@@ -13,7 +13,7 @@ class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AuthCubit(AuthRepository()),
+      create: (context) => getIt<AuthCubit>(),
       child: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state.status == Status.success) {
