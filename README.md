@@ -3,10 +3,10 @@
 
 ### This is a simple TO-DO app for staying organized and getting things done efficiently. 📝✅
 ### App is using FireBase to store all the data, and BLoC state managment. Other packages used:
-  Get_it
-  intl
-  google_fonts
-  flutter_launcher_icons
+  Get_it,
+  intl,
+  google_fonts,
+  flutter_launcher_icons,
   lottie
 
 ## Screenshots
