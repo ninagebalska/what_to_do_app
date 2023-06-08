@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:what_to_do_app/domain/repositories/auth_repository.dart';
@@ -8,7 +7,7 @@ import 'package:what_to_do_app/enums.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit(this.authRepository) : super(AuthState());
+  AuthCubit({required this.authRepository}) : super(AuthState());
 
   final AuthRepository authRepository;
 
@@ -50,12 +49,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(AuthState(isCreatingAccount: true));
   }
 
-
   // want to login
   Future<void> notCreateAccount() async {
     emit(AuthState(isCreatingAccount: false));
   }
-
 
   //auth state changes
   StreamSubscription? streamSubscription;

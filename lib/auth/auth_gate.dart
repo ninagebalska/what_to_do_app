@@ -10,7 +10,7 @@ class AuthGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AuthCubit>(
+    return BlocProvider(
       create: (context) => getIt<AuthCubit>()..start(),
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {

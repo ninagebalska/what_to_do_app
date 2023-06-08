@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:what_to_do_app/auth/cubit/auth_cubit.dart';
-import 'package:what_to_do_app/domain/repositories/auth_repository.dart';
 import 'package:what_to_do_app/enums.dart';
+import 'package:what_to_do_app/injection_container.dart';
 
 import '../features/home/page/home_page.dart';
 
@@ -15,8 +15,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit(AuthRepository()),
+    return BlocProvider<AuthCubit>(
+      create: (context) => getIt(),
       child: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           final errorMessage = state.errorMessage;

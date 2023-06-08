@@ -6,13 +6,13 @@ import 'package:what_to_do_app/domain/repositories/events_repository.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._eventsRepository) : super(const HomeState());
+  HomeCubit({required this.eventsRepository}) : super(const HomeState());
 
-  final EventsRepository _eventsRepository;
+  final EventsRepository eventsRepository;
   StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
-    _streamSubscription = _eventsRepository.getEventsStream().listen(
+    _streamSubscription = eventsRepository.getEventsStream().listen(
       (events) {
         emit(HomeState(events: events));
       },
@@ -25,7 +25,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> remove({required String id}) async {
     try {
-      _eventsRepository.delete(id: id);
+      eventsRepository.delete(id: id);
     } catch (error) {
       emit(
         const HomeState(removingErrorOccured: true),
