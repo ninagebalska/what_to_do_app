@@ -5,7 +5,7 @@ import 'package:what_to_do_app/auth/cubit/auth_cubit.dart';
 import 'package:what_to_do_app/enums.dart';
 import 'package:what_to_do_app/injection_container.dart';
 
-import '../features/home/page/home_page.dart';
+import '../../features/home/page/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Image(
-                      image: AssetImage('images/login1.png'),
+                      image: AssetImage('assets/images/login1.png'),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,

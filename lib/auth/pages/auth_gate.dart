@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:what_to_do_app/auth/cubit/auth_cubit.dart';
-import 'package:what_to_do_app/auth/login_page.dart';
+import 'package:what_to_do_app/auth/pages/login_page.dart';
 import 'package:what_to_do_app/features/home/page/home_page.dart';
 import 'package:what_to_do_app/injection_container.dart';
 

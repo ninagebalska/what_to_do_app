@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:what_to_do_app/auth/login_page.dart';
+import 'package:what_to_do_app/auth/pages/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -35,7 +35,7 @@ class WelcomePage extends StatelessWidget {
             child: const Align(
               alignment: Alignment(0, -1),
               child: Image(
-                image: AssetImage('images/welcome_image.png'),
+                image: AssetImage('assets/images/welcome_image.png'),
                 height: 240,
               ),
             ),

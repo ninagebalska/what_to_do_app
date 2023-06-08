@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:what_to_do_app/auth/auth_gate.dart';
+import 'package:what_to_do_app/auth/pages/auth_gate.dart';
 import 'package:what_to_do_app/injection_container.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
