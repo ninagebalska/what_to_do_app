@@ -2,7 +2,12 @@
 ## Flutter TODO App
 
 ### This is a simple TO-DO app for staying organized and getting things done efficiently. 📝✅
-### App is using FireBase to store all the data, and BLoC state managment.
+### App is using FireBase to store all the data, and BLoC state managment. Other packages used:
+  Get_it
+  intl
+  google_fonts
+  flutter_launcher_icons
+  lottie
 
 ## Screenshots
 <img src="https://github.com/ninagebalska/what_to_do_app/assets/121769032/157ca64e-1670-4992-a701-b1c7b1c07248" width=30% height=30%>

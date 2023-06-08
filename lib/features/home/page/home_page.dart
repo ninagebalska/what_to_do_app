@@ -68,7 +68,7 @@ class _HomePageBody extends StatelessWidget {
                     height: 300,
                   ),
                   Text(
-                    'You have done all tasks!',
+                    'You have got no tasks to do!',
                     style: GoogleFonts.poppins(
                       fontSize: 18,
                       color: Colors.deepOrange,
