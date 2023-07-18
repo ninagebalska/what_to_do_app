@@ -13,8 +13,9 @@ class AddTaskDialog extends StatefulWidget {
 }
 
 class _AddTaskDialogState extends State<AddTaskDialog> {
-  String? title;
+  
   DateTime? eventDate;
+  final titleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                     ),
                     const SizedBox(height: 18),
                     TextField(
+                      controller: titleController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
@@ -75,11 +77,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                         ),
                         hintText: 'What to do...',
                       ),
-                      onChanged: (newValue) {
-                        setState(() {
-                          title = newValue;
-                        });
-                      },
+                     
                     ),
                     const SizedBox(height: 15),
                     OutlinedButton.icon(
@@ -111,12 +109,12 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
-                      onPressed: eventDate == null || title == null
+                      onPressed: eventDate == null
                           ? null
                           : () {
                               context.read<AddCubit>().add(
-                                    title!,
-                                    eventDate!,
+                                    title: titleController.text,
+                                    eventDate: eventDate!,
                                   );
                             },
                       style: ElevatedButton.styleFrom(

@@ -8,10 +8,7 @@ class AddCubit extends Cubit<AddState> {
 
   final EventsRepository eventsRepository;
 
-  Future<void> add(
-    String title,
-    DateTime eventDate,
-  ) async {
+  Future<void> add({required String title, required DateTime eventDate}) async {
     try {
       await eventsRepository.add(title, eventDate);
       emit(AddState(saved: true));
